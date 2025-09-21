@@ -2,17 +2,18 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Descompresor RAR en el Navegador</title>
+    <title>Descompresor ZIP en el Navegador</title>
 </head>
 <body>
 
-    <h1>Descomprimir archivo RAR</h1>
-    <input type="file" id="fileInput" accept=".rar">
-    <p>Selecciona un archivo .rar que contenga imágenes JPG.</p>
+    <h1>Descomprimir archivo ZIP</h1>
+    <input type="file" id="fileInput" accept=".zip">
+    <p>Selecciona un archivo .zip que contenga imágenes JPG o PNG.</p>
 
     <div id="imageContainer"></div>
 
-    <script src="https://cdn.jsdelivr.net/npm/unrar-js@0.2.3/unrar.js"></script>
+    <!-- Carga JSZip desde el CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
     <script src="script.js"></script>
 
 </body>
