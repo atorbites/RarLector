@@ -1,13 +1,40 @@
 ---
 layout: default
-title: RarLector
+title: ZIPLector
 ---
 
-<h1>Descomprimir archivo ZIP</h1>
-<input type="file" id="fileInput" accept=".zip">
-<p>Selecciona un archivo .zip que contenga imágenes JPG o PNG.</p>
-<div id="imageContainer"></div>
+# ZIP Lector
 
-<!-- JSZip desde CDN -->
-<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
-<script src="script.js"></script>
+## Descomprimir archivo ZIP local
+- **Archivo ZIP local**:  
+  `<input type="file" id="fileInput" accept=".zip">`  
+- **Botón**:  
+  `<button id="extractFileBtn">Descomprimir archivo</button>`
+
+---
+
+## Descomprimir ZIP desde URL
+- **Campo de texto**:  
+  `<input type="text" id="urlInput" placeholder="Pega aquí la URL de un archivo ZIP">`  
+- **Botón**:  
+  `<button id="downloadBtn">Descargar y descomprimir</button>`
+
+---
+
+## Archivos extraídos
+- `<ul id="fileList"></ul>`
+
+---
+
+<div id="message"></div>
+
+---
+
+### Pie de página
+Desarrollado por [atorbites](https://github.com/atorbites)
+
+---
+
+### Scripts utilizados
+- [JSZip 3.10.1](https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js)  
+- `script.js`
