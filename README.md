@@ -1,36 +1,28 @@
-# Descompresor RAR en el Navegador
+# ZIP Lector
 
-Esta aplicación permite descomprimir archivos `.rar` que contengan imágenes JPG directamente en el navegador, sin necesidad de instalar software adicional.
+ZIP Lector es una herramienta web simple para descomprimir archivos ZIP directamente en el navegador, sin necesidad de instalar software adicional.
 
-## ¿Cómo funciona?
+## Características
 
-1. Sube un archivo `.rar` usando el botón de selección.
-2. El navegador descomprime el archivo y muestra todas las imágenes JPG contenidas en él.
+- Descomprime archivos ZIP de manera rápida y sencilla.
+- No requiere instalación: todo funciona en la web.
+- Interfaz simple, de una sola columna, compatible con dispositivos móviles y escritorio.
 
-## Requisitos
+## ¿Cómo usar?
 
-- Navegador moderno (Chrome, Firefox, Edge, etc.)
-- Archivo `.rar` con imágenes JPG o JPEG.
+1. Haz clic en el botón para seleccionar tu archivo ZIP.
+2. Espera unos segundos mientras se descomprime.
+3. Descarga los archivos extraídos directamente desde el navegador.
 
-## Instalación y uso
+## Tecnologías utilizadas
 
-1. Clona este repositorio o descarga los archivos `index.html` y `script.js`.
-2. Abre el archivo `index.html` en tu navegador.
-3. Selecciona un archivo `.rar` y visualiza las imágenes extraídas en la página.
+- HTML5, CSS3, JavaScript
+- [JSZip](https://stuk.github.io/jszip/) para la descompresión de archivos ZIP
+- GitHub Pages + Jekyll para la publicación
 
-## Estructura del proyecto
+## Licencia
 
-```
-RarLector/
-│
-├── index.html      # Página principal de la aplicación
-├── script.js       # Lógica para descomprimir y mostrar imágenes
-└── README.md       # Este archivo de instrucciones
-```
-
-## Créditos
-
-- Biblioteca [unrar-js](https://github.com/martinrue/unrar-js) para la descompresión de archivos RAR en JavaScript.
+MIT
 
 ---
-¡Disfruta descomprimiendo imágenes desde tus archivos RAR sin salir del navegador!
+Desarrollado por [atorbites](https://github.com/atorbites)
