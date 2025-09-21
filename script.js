@@ -8,28 +8,28 @@ fileInput.addEventListener('change', async (event) => {
     // Leer el archivo como ArrayBuffer
     const arrayBuffer = await file.arrayBuffer();
 
-    // Crear instancia Unrar
-    const extractor = new Unrar(arrayBuffer);
+    // Cargar el ZIP usando JSZip
+    const zip = await JSZip.loadAsync(arrayBuffer);
 
     imageContainer.innerHTML = '';
 
-    while (true) {
-        const entry = extractor.next();
-        if (!entry) break; // No hay más archivos
-
-        // Solo procesar imágenes JPG/JPEG
+    // Iterar sobre los archivos del ZIP
+    zip.forEach(async (relativePath, zipEntry) => {
+        // Solo procesar imágenes JPG/JPEG/PNG
         if (
-            entry.filename.toLowerCase().endsWith('.jpg') ||
-            entry.filename.toLowerCase().endsWith('.jpeg')
+            zipEntry.name.toLowerCase().endsWith('.jpg') ||
+            zipEntry.name.toLowerCase().endsWith('.jpeg') ||
+            zipEntry.name.toLowerCase().endsWith('.png')
         ) {
-            const blob = new Blob([entry.extract()], { type: 'image/jpeg' });
-            const url = URL.createObjectURL(blob);
+            const type = zipEntry.name.toLowerCase().endsWith('.png') ? 'image/png' : 'image/jpeg';
+            const blob = await zipEntry.async('blob');
+            const url = URL.createObjectURL(new Blob([blob], { type }));
             const img = document.createElement('img');
             img.src = url;
             img.style.maxWidth = '100%';
             img.style.margin = '10px';
             imageContainer.appendChild(img);
-            console.log(`Imagen '${entry.filename}' extraída y mostrada.`);
+            console.log(`Imagen '${zipEntry.name}' extraída y mostrada.`);
         }
-    }
+    });
 });
