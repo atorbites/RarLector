@@ -37,7 +37,7 @@ button {
   border-radius: 6px;
   cursor: pointer;
   transition: background 0.2s;
-} 
+}
 button:hover {
   background: #1763c6;
 }
