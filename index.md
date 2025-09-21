@@ -1,0 +1,13 @@
+---
+layout: default
+title: RarLector
+---
+
+<h1>Descomprimir archivo ZIP</h1>
+<input type="file" id="fileInput" accept=".zip">
+<p>Selecciona un archivo .zip que contenga imágenes JPG o PNG.</p>
+<div id="imageContainer"></div>
+
+<!-- JSZip desde CDN -->
+<script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+<script src="script.js"></script>
